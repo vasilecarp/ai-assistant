@@ -20,6 +20,17 @@ export default function Home() {
         />
       </header>
       {/* Form */}
+      <form>
+        <div>{/* Messages */}</div>
+        {/* Hidden Fields */}
+        <input type="file" />
+        <button type="submit" hidden />
+        <div>
+          {/* Recorder */}
+
+          {/* Voice Synthesiser */}
+        </div>
+      </form>
     </main>
   );
 }
