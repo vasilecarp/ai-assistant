@@ -3,7 +3,7 @@ import { SettingsIcon } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-black h-screen overflow-y-scroll">
       {/* Header */}
       <header className="flex fixed top-0 justify-between text-white w-full p-5">
         <Image
@@ -20,8 +20,10 @@ export default function Home() {
         />
       </header>
       {/* Form */}
-      <form>
-        <div>{/* Messages */}</div>
+      <form className="flex flex-col bg-black">
+        <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
+          {/* Messages */}
+        </div>
         {/* Hidden Fields */}
         <input type="file" />
         <button type="submit" hidden />
