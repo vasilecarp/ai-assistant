@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SettingsIcon } from "lucide-react";
+import Messages from "@/components/Messages";
 
 export default function Home() {
   return (
@@ -22,15 +23,15 @@ export default function Home() {
       {/* Form */}
       <form className="flex flex-col bg-black">
         <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
-          {/* Messages */}
+          <Messages />
         </div>
         {/* Hidden Fields */}
-        <input type="file" />
+        <input type="file" hidden />
         <button type="submit" hidden />
-        <div>
+        <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
           {/* Recorder */}
 
-          {/* Voice Synthesiser */}
+          <div>{/* Voice Synthesiser */}</div>
         </div>
       </form>
     </main>
