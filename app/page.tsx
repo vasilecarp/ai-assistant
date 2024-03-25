@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { SettingsIcon } from "lucide-react";
@@ -8,6 +8,30 @@ import { useRef } from "react";
 
 export default function Home() {
   const fileRef = useRef<HTMLInputElement | null>(null);
+  const submitButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const uploadAudio = (blob: Blob) => {
+    const url = URL.createObjectURL(blob);
+    const audio = document.createElement("audio");
+    audio.src = url;
+    audio.controls = true;
+
+    // Create a File object from the Blob
+    const file = new File([blob], "audio.webm", { type: blob.type });
+
+    // Set the file as the value of the file input element
+    if (fileRef.current) {
+      // Create a DataTransfer object to simulate a file input event
+      const dataTransfer = new DataTransfer();
+      dataTransfer.items.add(file);
+      fileRef.current.files = dataTransfer.files;
+
+      // Submit the form
+      if (submitButtonRef.current) {
+        submitButtonRef.current.click();
+      }
+    }
+  };
   return (
     <main className="bg-black h-screen overflow-y-scroll">
       {/* Header */}
@@ -31,8 +55,8 @@ export default function Home() {
           <Messages />
         </div>
         {/* Hidden Fields */}
-        <input type="file" hidden ref={fileRef}/>
-        <button type="submit" hidden />
+        <input type="file" hidden ref={fileRef} />
+        <button type="submit" hidden ref={submitButtonRef} />
         <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
           {/* Recorder */}
           <Recorder />
