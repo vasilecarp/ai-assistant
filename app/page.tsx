@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SettingsIcon } from "lucide-react";
 import Messages from "@/components/Messages";
+import Recorder from "@/components/Recorder";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <button type="submit" hidden />
         <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
           {/* Recorder */}
+          <Recorder />
 
           <div>{/* Voice Synthesiser */}</div>
         </div>
