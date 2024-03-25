@@ -54,12 +54,14 @@ export default function Home() {
         <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
           <Messages />
         </div>
+        
         {/* Hidden Fields */}
-        <input type="file" hidden ref={fileRef} />
+        <input type="file" name="audio" hidden ref={fileRef} />
         <button type="submit" hidden ref={submitButtonRef} />
+
         <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
           {/* Recorder */}
-          <Recorder />
+          <Recorder uploadAudio={uploadAudio} />
 
           <div>{/* Voice Synthesiser */}</div>
         </div>
