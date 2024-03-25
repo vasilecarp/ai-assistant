@@ -1,9 +1,13 @@
+'use client'
+
 import Image from "next/image";
 import { SettingsIcon } from "lucide-react";
 import Messages from "@/components/Messages";
 import Recorder from "@/components/Recorder";
+import { useRef } from "react";
 
 export default function Home() {
+  const fileRef = useRef<HTMLInputElement | null>(null);
   return (
     <main className="bg-black h-screen overflow-y-scroll">
       {/* Header */}
@@ -27,7 +31,7 @@ export default function Home() {
           <Messages />
         </div>
         {/* Hidden Fields */}
-        <input type="file" hidden />
+        <input type="file" hidden ref={fileRef}/>
         <button type="submit" hidden />
         <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
           {/* Recorder */}
