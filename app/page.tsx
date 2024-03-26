@@ -54,7 +54,7 @@ export default function Home() {
         <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
           <Messages />
         </div>
-        
+
         {/* Hidden Fields */}
         <input type="file" name="audio" hidden ref={fileRef} />
         <button type="submit" hidden ref={submitButtonRef} />
