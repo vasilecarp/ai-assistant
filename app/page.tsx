@@ -10,11 +10,7 @@ export default function Home() {
   const fileRef = useRef<HTMLInputElement | null>(null);
   const submitButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const uploadAudio = (blob: Blob) => {
-    const url = URL.createObjectURL(blob);
-    const audio = document.createElement("audio");
-    audio.src = url;
-    audio.controls = true;
+  const uploadAudio = (blob: Blob) => {  
 
     // Create a File object from the Blob
     const file = new File([blob], "audio.webm", { type: blob.type });
@@ -50,7 +46,7 @@ export default function Home() {
         />
       </header>
       {/* Form */}
-      <form className="flex flex-col bg-black">
+      <form action={formAction} className="flex flex-col bg-black">
         <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
           <Messages />
         </div>
